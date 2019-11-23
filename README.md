@@ -16,3 +16,7 @@ just follow these simple steps.
 All feed back is welcome! I am also down to make any Updates i think would imporve the program so feel free to leave suggestions.
 I ask that you dont go to hard on the critisizm as i through this whole thing together in only a few hours.
 The goal is to learn and have fun!
+
+# Adding codes
+When your ready to make your own code please do so in the DIEUWKGF.py file.
+Do not forget to add your codes to the "Codes" array or they will not work.
