@@ -4,6 +4,7 @@ import time
 import sys
 import random
 
+#ADD YOUR GMAIL CREDENTIALS HERE!
 userName = "YourOwn@gmail.com"
 key = "YourGmailPassword"
 
