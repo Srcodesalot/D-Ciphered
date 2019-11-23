@@ -2,23 +2,26 @@ import imaplib
 import email
 import Decoder
 
+
 potentialEmails = []
-#Queues a list of mail would work better async
+
+
+# Queues a list of mail would work better async
 def mailQueue(usrname, passwrd):
     global potentialEmails
 
     try:
-        #message reading
+        # message reading
         mail = imaplib.IMAP4_SSL("imap.gmail.com")
         mail.login(usrname, passwrd)
         mail.select('inbox')
 
-        type, data = mail.search(None, 'All')
+        typ, data = mail.search(None, 'All')
         emailstring = data[0]
         emailList = emailstring.split()
 
         for i in emailList:
-            typ, data = mail.fetch(i,'(RFC822)')
+            ty, data = mail.fetch(i, '(RFC822)')
             for response in data:
                 if isinstance(response, tuple):
                     msg = email.message_from_bytes(response[1])
@@ -26,10 +29,11 @@ def mailQueue(usrname, passwrd):
                     if subject == "ItsCasual":
                         potentialEmails.append(msg)
         return potentialEmails
-    except:
+    except():
         print("OHH NO! Something went wrong.")
 
-#returns decoded string
+
+# returns decoded string
 def decipher():
     global potentialEmails
     x=0
@@ -41,10 +45,13 @@ def decipher():
     if int(selector) < 0 or int(selector) > len(potentialEmails):
         print("\n  ∆˚Whoa there Bucko thats not on the list!˚∆")
         return ''
+    print("")
+    print("Message:")
     selected = potentialEmails[int(selector)]
-    Body = str(selected).split("!start!")
-    message = Body[1].split("!end!")
+    body = str(selected).split("!start!")
+    message = body[1].split("!end!")
     decodedMessage = Decoder.decode(message[0])
     potentialEmails = []
+
     return decodedMessage
 

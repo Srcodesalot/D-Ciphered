@@ -27,7 +27,7 @@ def open():
         if "create" in command.casefold():
             Writer.new(userName,key)
         elif "read" in command.casefold():
-            print ("One moment please while we fetch your top secret messages!")
+            print("One moment please while we fetch your top secret messages!")
             Reciver.mailQueue(userName, key)
             decrypt = Reciver.decipher()
             display(decrypt)

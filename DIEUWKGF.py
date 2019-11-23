@@ -1,6 +1,7 @@
 def getNumOfCodes():
     return len(Codes)
 
+
 #trys to see if the letter is in the "code" if it isnt it returns the same letter
 def getCode(code, char):
     coded = Codes[code]
@@ -15,8 +16,8 @@ def getDecode(code, char):
     for key, value in decode.items():
         if char == value:
             return key
-
     return char
+
 
 def getCodeType(list):
     tell = list[-1]
@@ -25,7 +26,6 @@ def getCodeType(list):
             return codes["code"]
         print("no")
     return 404
-
 
 
 # this is the starter code. it will be referenced as index 0 in the codes array

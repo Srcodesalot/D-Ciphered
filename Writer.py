@@ -1,6 +1,7 @@
 import smtplib
 import Encoder
 
+
 def new(usrname, passwrd):
     try:
         # Allows user to type in message
@@ -8,7 +9,7 @@ def new(usrname, passwrd):
         message = input("Message to send:")
         codedMessage = Encoder.encode(message)
 
-        #IMPORTANT DO NOT CHANGE SUBJECT
+        # IMPORTANT DO NOT CHANGE SUBJECT
         payload = 'Subject:ItsCasual\n\n ' + "!start!" + codedMessage + "!end!"
 
         # server and message sending
