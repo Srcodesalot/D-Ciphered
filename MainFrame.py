@@ -4,8 +4,9 @@ import time
 import sys
 import random
 
-userName = "attentivness@gmail.com"
-key = "Wilder123"
+#ADD YOUR GMAIL CREDENTIALS HERE!
+userName = "YourOwn@gmail.com"
+key = "YourGmailPassword"
 
 def open():
     display("     ≈≈ WELCOME TO ≈≈    ")
