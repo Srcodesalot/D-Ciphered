@@ -24,17 +24,17 @@ def open():
         print("•")
         print("-Finally, To exit type 'exit'\n")
         command = input(">")
-        if command.casefold() == "create":
+        if "create" in command.casefold():
             Writer.new(userName,key)
-        elif command.casefold() == "read":
+        elif "read" in command.casefold():
             print ("One moment please while we fetch your top secret messages!")
             Reciver.mailQueue(userName, key)
             decrypt = Reciver.decipher()
             display(decrypt)
-#            time.sleep(len(decrypt)/4)
+#            time.sleep(len(decrypt)/4)        ///uncomment this string to add time to the display of your messages
             print("\n")
             con = input("when finished reading type anything to continue \n >")
-        elif command.casefold() == "exit":
+        elif "exit" in command.casefold():
             sys.exit(0)
         else:
             print("im sorry that doesnt seem to be a command.")
