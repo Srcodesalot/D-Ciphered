@@ -19,6 +19,6 @@ def new(usrname, passwrd):
 
         server.quit()
 
-        print("\n ★ Your encrypted message has been Successfully been sent to " + recipient + " ★ \n")
+        print("\n ★ Your encrypted message has been Successfully sent to " + recipient + " ★ \n")
     except():
         print("OHHH NO! Something went wrong.")
