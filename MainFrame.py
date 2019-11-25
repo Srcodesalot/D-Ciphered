@@ -5,7 +5,7 @@ import sys
 import random
 
 #ADD YOUR GMAIL CREDENTIALS HERE!
-userName = "YourOwn@gmail.com"
+userName = "YourGmail@gmail.com"
 key = "YourGmailPassword"
 
 def open():
@@ -13,7 +13,6 @@ def open():
     print("")
     display("    ≈≈  D-CIPHERED!  ≈≈    ")
     print("")
-    time.sleep(2)
 
     command = ''
     while command != "exit":
@@ -26,14 +25,15 @@ def open():
         command = input(">")
         if "create" in command.casefold():
             Writer.new(userName,key)
+
         elif "read" in command.casefold():
-            print("One moment please while we fetch your top secret messages!")
             Reciver.mailQueue(userName, key)
             decrypt = Reciver.decipher()
             display(decrypt)
-#            time.sleep(len(decrypt)/4)        ///uncomment this string to add time to the display of your messages
+#           time.sleep(len(decrypt)/4)        ///uncomment this string to add time to the display of your messages
             print("\n")
             con = input("when finished reading type anything to continue \n >")
+
         elif "exit" in command.casefold():
             sys.exit(0)
         else:

@@ -9,7 +9,7 @@ potentialEmails = []
 # Queues a list of mail would work better async
 def mailQueue(usrname, passwrd):
     global potentialEmails
-
+    print("One moment please while we fetch your top secret messages!")
     try:
         # message reading
         mail = imaplib.IMAP4_SSL("imap.gmail.com")
@@ -48,8 +48,8 @@ def decipher():
     print("")
     print("Message:")
     selected = potentialEmails[int(selector)]
-    body = str(selected).split("!start!")
-    message = body[1].split("!end!")
+    body = str(selected).split("!st!")
+    message = body[1].split("!e!")
     decodedMessage = Decoder.decode(message[0])
     potentialEmails = []
 

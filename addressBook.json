@@ -1,0 +1,7 @@
+{
+    "address_book": {
+    },
+    "excepted_emails": {
+        "gmail.com": true
+    }
+}
